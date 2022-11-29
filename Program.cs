@@ -12,14 +12,19 @@ string FillYourArray (int size)
     Console.WriteLine();
     return newArray;
 }
+
 void NewArrayLessThan4 (string[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.WriteLine(array[i] + " ");
+        if (array[i].Length <=3)
+        {
+            Console.WriteLine(array[i] + ", ");
+            Console.WriteLine();
+        }
     }
-    Console.WriteLine();
 }
+/* 
 void ShowArray(int[] array)     // вывести массив
 {
     for(int i = 0; i<array.Length; i++)
@@ -27,12 +32,8 @@ void ShowArray(int[] array)     // вывести массив
         Console.Write(array[i] + " ");
     }
 }
+*/
 Console.Write("Input number of rows in your array: ");
 int size = Convert.ToInt32(Console.ReadLine());
-FillYourArray(size);
-
-
-string[] myArray1 = CreateStringArray(size1);
-string[] myArray2 = CreateStringArray(size2);
-Console.WriteLine();
-NewArrayLessThan4(MergeTwoStringArrays(myArray1, myArray2));
+string[] YourArray = FillYourArray(size);
+NewArrayLessThan4(YourArray);
